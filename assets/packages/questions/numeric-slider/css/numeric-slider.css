@@ -95,11 +95,6 @@
         position: relative;
         margin-top: 0
     }
-
-    .slider-list .btn-slider-reset {
-        top: -1em;
-        margin-top: 0
-    }
 }
 
 @media (max-width: 767px) {

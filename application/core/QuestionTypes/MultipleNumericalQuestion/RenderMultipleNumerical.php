@@ -204,23 +204,12 @@ class RenderMultipleNumerical extends QuestionBaseRenderer
                     'integeronly'            => $this->getQuestionAttribute('num_value_int_only'),
                 );
             } else {
-                $sliderWidth = 12;
-
                 if ($this->sliderOptionsArray['slider_separator'] != '') {
                     $aAnswer     = explode($this->sliderOptionsArray['slider_separator'], $sSubquestionText);
                     $theanswer   = $aAnswer[0] ?? "";
                     $labelText   = $theanswer;
                     $sliderleft  = $aAnswer[1] ?? null;
                     $sliderright = $aAnswer[2] ?? null;
-
-                    /* sliderleft and sliderright is in input, but is part of answers then take label width */
-                    if (!empty($sliderleft)) {
-                        $sliderWidth = $sliderWidth - 2;
-                    }
-                    
-                    if (!empty($sliderright)) {
-                        $sliderWidth = $sliderWidth - 2;
-                    }
                 } else {
                     $theanswer = $sQuestionText;
                     $sliders   = false;
@@ -243,7 +232,6 @@ class RenderMultipleNumerical extends QuestionBaseRenderer
                         'dispVal'                => $dispVal,
                         'sliderleft'             => $sliderleft,
                         'sliderright'            => $sliderright,
-                        'sliderWidth'            => $sliderWidth,
                         'sUnformatedValue'       => $sUnformatedValue,
                         'extraclass'             => $this->extraclass,
                         'qid'                    => $this->oQuestion->qid,
